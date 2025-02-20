@@ -14,6 +14,7 @@ class CustomButton extends StatelessWidget {
   final Function()? onTap;
   final bool showShadow;
   final Color borderColor;
+  final Color shadowColor;
   final String? icon;
 
   const CustomButton({
@@ -27,6 +28,7 @@ class CustomButton extends StatelessWidget {
     this.borderRadius = 15,
     this.textSize = 18,
     this.showShadow = true,
+    this.shadowColor = kShadowColor,
     this.borderColor = kPrimaryColor,
     this.icon,
   });
@@ -44,7 +46,7 @@ class CustomButton extends StatelessWidget {
             color: color,
             boxShadow: [
               BoxShadow(
-                color: showShadow ? kShadowColor : Colors.transparent,
+                color: showShadow ? shadowColor : Colors.transparent,
                 offset: const Offset(0, 3),
                 blurRadius: 0,
                 spreadRadius: 0,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:healink_app/common_widgets/custom_button.dart';
 import 'package:healink_app/utils/app_colors.dart';
+import 'package:healink_app/utils/app_strings.dart';
 import 'package:healink_app/utils/app_styles.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -67,63 +68,64 @@ class HabitSelectionScreen extends StatelessWidget {
                     horizontal: getWidth(24), vertical: getHeight(14)),
                 itemCount: controller.habits.length + 1,
                 itemBuilder: (context, index) {
-                  var habit = controller.habits[index - 1];
+                  if (index == controller.habits.length) {
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: getHeight(66)),
+                      child: Obx(
+                        () => CustomButton(
+                          height: 46,
+                          width: 260,
+                          textColor: kPrimaryColor,
+                          textSize: 16,
+                          title: controller.selectedHabits.length ==
+                                  controller.habits.length
+                              ? 'Deselect All'
+                              : 'Select All',
+                          onTap: controller.selectAllHabits,
+                          color: kBgColor,
+                          borderColor: kPrimaryColor,
+                          showShadow: false,
+                        ),
+                      ),
+                    );
+                  }
 
-                  return index == 30
-                      ? Padding(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: getHeight(66)),
-                          child: CustomButton(
-                            height: 46,
-                            width: 260,
-                            textColor: kPrimaryColor,
-                            textSize: 16,
-                            title: 'Select all',
-                            onTap: () {},
-                            color: kBgColor,
-                            borderColor: kPrimaryColor,
-                            showShadow: false,
+                  var habit = controller.habits[index];
+                  return GestureDetector(
+                      onTap: () => controller.toggleHabit(habit['name']),
+                      child: Obx(
+                        () => Container(
+                          margin: EdgeInsets.only(bottom: getHeight(20)),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: getWidth(16),
+                              vertical: getHeight(20)),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(getWidth(24)),
+                            border: controller.selectedHabits
+                                    .contains(habit['name'])
+                                ? Border.all(color: kBlackTextColor, width: 2)
+                                : Border.all(color: kWhiteColor),
                           ),
-                        )
-                      : GestureDetector(
-                          onTap: () => controller.toggleHabit(habit['name']),
-                          child: Obx(
-                            () => Container(
-                              margin: EdgeInsets.only(bottom: getHeight(20)),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: getWidth(16),
-                                  vertical: getHeight(20)),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius:
-                                    BorderRadius.circular(getWidth(24)),
-                                border: controller.selectedHabits
-                                        .contains(habit['name'])
-                                    ? Border.all(
-                                        color: kBlackTextColor, width: 2)
-                                    : Border.all(color: kWhiteColor),
+                          child: Row(
+                            children: [
+                              Image.asset(habit['icon'],
+                                  width: getWidth(48), height: getWidth(48)),
+                              SizedBox(width: getWidth(22)),
+                              SizedBox(
+                                width: getWidth(233),
+                                child: Text(
+                                  habit['name'],
+                                  maxLines: 2,
+                                  style: AppStyles.blackTextStyle().copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16.sp),
+                                ),
                               ),
-                              child: Row(
-                                children: [
-                                  Image.asset(habit['icon'],
-                                      width: getWidth(48),
-                                      height: getWidth(48)),
-                                  SizedBox(width: getWidth(22)),
-                                  SizedBox(
-                                    width: getWidth(233),
-                                    child: Text(
-                                      habit['name'],
-                                      maxLines: 2,
-                                      style: AppStyles.blackTextStyle()
-                                          .copyWith(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 16.sp),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ));
+                            ],
+                          ),
+                        ),
+                      ));
                 },
               ),
             ),
@@ -161,7 +163,9 @@ class HabitSelectionScreen extends StatelessWidget {
                       height: 48,
                       width: 267,
                       title: "Continue",
-                      onTap: () {},
+                      onTap: () {
+                        Get.offAllNamed(kBottomBarScreenRoute);
+                      },
                     )
                   : SizedBox.shrink(),
             ),

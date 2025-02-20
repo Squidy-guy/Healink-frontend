@@ -4,6 +4,15 @@ import 'package:healink_app/screens/auth/login_screen.dart';
 import 'package:healink_app/screens/auth/new_passsword_screen.dart';
 import 'package:healink_app/screens/auth/register_screen.dart';
 import 'package:healink_app/screens/auth/verify_otp_screen.dart';
+import 'package:healink_app/screens/bottom_bar/bottom_bar_screen.dart';
+import 'package:healink_app/screens/friends/friends_screen.dart';
+import 'package:healink_app/screens/guides/sleep_guide_screen.dart';
+import 'package:healink_app/screens/notification/notification_screen.dart';
+import 'package:healink_app/screens/profile/about_app_screen.dart';
+import 'package:healink_app/screens/profile/delete_account_screen.dart';
+import 'package:healink_app/screens/profile/feedback_screen.dart';
+import 'package:healink_app/screens/profile/my_account_screen.dart';
+import 'package:healink_app/screens/profile/settings_screen.dart';
 import 'package:healink_app/screens/profile_setup/congratulation_screen.dart';
 import 'package:healink_app/screens/profile_setup/select_avatar_screen.dart';
 import 'package:healink_app/screens/profile_setup/select_habit_screen.dart';
@@ -54,6 +63,42 @@ class RouteGenerator {
       GetPage(
           name: kHabitSelectionScreenRoute,
           page: () => HabitSelectionScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kBottomBarScreenRoute,
+          page: () => BottomBarScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kMyAccountScreenRoute,
+          page: () => MyAccountScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kDeleteAccountScreenRoute,
+          page: () => DeleteAccountScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kSettingsScreenRoute,
+          page: () => SettingsScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kAboutAppScreenRoute,
+          page: () => AboutAppScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kFeedbackScreenRoute,
+          page: () => FeedbackScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kNotificationsScreenRoute,
+          page: () => NotificationScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kFriendsScreenRoute,
+          page: () => FriendsScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kSleepGuideScreenRoute,
+          page: () => SleepGuideScreen(),
           binding: ScreenBindings()),
     ];
   }

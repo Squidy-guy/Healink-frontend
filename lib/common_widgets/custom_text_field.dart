@@ -26,6 +26,8 @@ class CustomTextField extends StatefulWidget {
   final int maxLines;
   final List<TextInputFormatter>? inputFormatters;
   final double borderRadius;
+  final double topPadding;
+  final bool showShadow;
 
   const CustomTextField({
     super.key,
@@ -50,6 +52,8 @@ class CustomTextField extends StatefulWidget {
     this.maxLines = 1,
     this.inputFormatters,
     this.borderRadius = 24,
+    this.topPadding = 0,
+    this.showShadow = true,
   });
 
   @override
@@ -78,7 +82,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
         borderRadius: BorderRadius.circular(widget.borderRadius),
         boxShadow: [
           BoxShadow(
-            color: kGreyShade1Color.withOpacity(0.3),
+            color: widget.showShadow
+                ? kGreyShade1Color.withOpacity(0.3)
+                : Colors.transparent,
             offset: const Offset(2, 4),
             blurRadius: 8,
             spreadRadius: 0,
@@ -110,7 +116,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   child: widget.suffixBuilder!(isFocused),
                 )
               : null,
-          contentPadding: EdgeInsets.only(left: getWidth(18)),
+          contentPadding:
+              EdgeInsets.only(left: getWidth(18), top: widget.topPadding),
           prefixIcon: widget.prefix,
           suffix: widget.suffixText,
           border: OutlineInputBorder(
@@ -119,14 +126,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
             borderSide: BorderSide(
               color: widget.borderColor,
-              width: 0.1,
+              width: 1,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(widget.borderRadius),
             borderSide: BorderSide(
               color: widget.borderColor,
-              width: 0.1,
+              width: 1,
             ),
           ),
           enabledBorder: OutlineInputBorder(
@@ -135,7 +142,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
             borderSide: BorderSide(
               color: widget.borderColor,
-              width: 0.1,
+              width: 1,
             ),
           ),
         ),

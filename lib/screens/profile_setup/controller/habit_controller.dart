@@ -36,11 +36,21 @@ class HabitController extends GetxController {
     {'icon': kHabit29, 'name': 'Gratitude'},
     {'icon': kHabit30, 'name': 'Social connection'},
   ].obs;
+
   void toggleHabit(String habit) {
     if (selectedHabits.contains(habit)) {
       selectedHabits.remove(habit);
     } else {
       selectedHabits.add(habit);
+    }
+  }
+
+  void selectAllHabits() {
+    if (selectedHabits.length == habits.length) {
+      selectedHabits.clear();
+    } else {
+      selectedHabits
+          .assignAll(habits.map((habit) => habit['name'] as String).toList());
     }
   }
 }

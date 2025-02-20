@@ -88,9 +88,10 @@ class AuthController extends GetxController {
       showCustomSnackbar('Error', 'All fields must be filled');
       return;
     }
+    Get.offAndToNamed(kHabitSelectionScreenRoute);
 
-    showCustomSnackbar('Success', 'Login successfully',
-        backgroundColor: Colors.green);
+    // showCustomSnackbar('Success', 'Login successfully',
+    //     backgroundColor: Colors.green);
   }
 
   void forgotPassword() {
