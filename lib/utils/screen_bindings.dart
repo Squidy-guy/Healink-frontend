@@ -8,6 +8,7 @@ import 'package:healink_app/screens/knowledge/controller/audio_player_controller
 import 'package:healink_app/screens/knowledge/controller/knowledge_controller.dart';
 import 'package:healink_app/screens/notification/controller/notification_controller.dart';
 import 'package:healink_app/screens/profile/controller/profile_controller.dart';
+import 'package:healink_app/screens/insights_screen/controller/insight_controller.dart';
 import 'package:healink_app/screens/profile_setup/controller/avatar_controller.dart';
 import 'package:healink_app/screens/profile_setup/controller/habit_controller.dart';
 
@@ -17,6 +18,7 @@ class ScreenBindings extends Bindings {
     Get.lazyPut(() => AuthController());
     Get.lazyPut(() => AvatarController());
     Get.lazyPut(() => HabitController());
+    Get.lazyPut(() => InsightController());
     Get.lazyPut(() => BottomNavController());
     Get.lazyPut(() => ProfileController());
     Get.lazyPut(() => HomeController());

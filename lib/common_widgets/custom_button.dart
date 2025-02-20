@@ -15,7 +15,8 @@ class CustomButton extends StatelessWidget {
   final bool showShadow;
   final Color borderColor;
   final Color shadowColor;
-  final String? icon;
+  final String? image;
+  final bool? isImage;
 
   const CustomButton({
     super.key,
@@ -28,9 +29,10 @@ class CustomButton extends StatelessWidget {
     this.borderRadius = 15,
     this.textSize = 18,
     this.showShadow = true,
+    this.isImage = false,
     this.shadowColor = kShadowColor,
     this.borderColor = kPrimaryColor,
-    this.icon,
+    this.image,
   });
 
   @override
@@ -52,14 +54,21 @@ class CustomButton extends StatelessWidget {
                 spreadRadius: 0,
               )
             ]),
-        child: Center(
-          child: Text(
-            title,
-            style: AppStyles.whiteTextStyle().copyWith(
-                fontSize: textSize.sp,
-                color: textColor,
-                fontWeight: FontWeight.w700),
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if(isImage == true)
+            Image.asset(image!,height: 18,width: 18,),
+            if(isImage == true)
+            SizedBox(width: getWidth(7),),
+            Text(
+              title,
+              style: AppStyles.whiteTextStyle().copyWith(
+                  fontSize: textSize.sp,
+                  color: textColor,
+                  fontWeight: FontWeight.w700),
+            ),
+          ],
         ),
       ),
     );

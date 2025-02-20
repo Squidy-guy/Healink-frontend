@@ -14,6 +14,9 @@ class AppStyles {
       fontSize: 15.sp, fontWeight: FontWeight.w500, color: kWhiteColor);
   static TextStyle blackTextStyle() => GoogleFonts.quicksand(
       fontSize: 15.sp, fontWeight: FontWeight.w500, color: kBlackTextColor);
+
+  EdgeInsets get paddingAll24 => EdgeInsets.all(24.0);
+  EdgeInsets get paddingHorizontal => EdgeInsets.symmetric(horizontal: getWidth(24));
 }
 
 double getWidth(double pixelValue) {

@@ -6,6 +6,7 @@ import 'package:healink_app/utils/app_strings.dart';
 import 'package:healink_app/utils/app_styles.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../../utils/app_strings.dart';
 import 'controller/habit_controller.dart';
 
 class HabitSelectionScreen extends StatelessWidget {
@@ -23,10 +24,10 @@ class HabitSelectionScreen extends StatelessWidget {
             height: double.infinity,
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
-              kPrimaryColor,
-              kShadow1Color,
-              kShadow2Color.withOpacity(0.97)
-            ])),
+                  kPrimaryColor,
+                  kShadow1Color,
+                  kShadow2Color.withOpacity(0.97)
+                ])),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -152,21 +153,21 @@ class HabitSelectionScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Obx(() => Text(
-                  "${controller.selectedHabits.length}/30",
-                  style: AppStyles.blackTextStyle()
-                      .copyWith(fontWeight: FontWeight.w700, fontSize: 18.sp),
-                )),
+              "${controller.selectedHabits.length}/30",
+              style: AppStyles.blackTextStyle()
+                  .copyWith(fontWeight: FontWeight.w700, fontSize: 18.sp),
+            )),
             SizedBox(height: getHeight(10)),
             Obx(
-              () => controller.selectedHabits.length >= 3
+                  () => controller.selectedHabits.length >= 3
                   ? CustomButton(
-                      height: 48,
-                      width: 267,
-                      title: "Continue",
-                      onTap: () {
-                        Get.offAllNamed(kBottomBarScreenRoute);
-                      },
-                    )
+                height: 48,
+                width: 267,
+                title: "Continue",
+                onTap: () {
+                  Get.toNamed(kInsightScreenRoute);
+                },
+              )
                   : SizedBox.shrink(),
             ),
           ],
@@ -175,3 +176,4 @@ class HabitSelectionScreen extends StatelessWidget {
     );
   }
 }
+

@@ -8,6 +8,15 @@ String kAppleIcon = "$basePathIcons/apple.png";
 String kFacebookIcon = "$basePathIcons/facebook.png";
 String kUserIcon = "$basePathIcons/user.png";
 String kEmailIcon = "$basePathIcons/email.png";
+String kInfoIcon = "$basePathIcons/info.png";
+String kSleepIcon = "$basePathIcons/sleep.png";
+String kFlashIcon = "$basePathIcons/flash.png";
+String kLeaveIcon = "$basePathIcons/leave.png";
+String kShieldIcon = "$basePathIcons/shield.png";
+String kShield1Icon = "$basePathIcons/shield1.png";
+String kExerciseIcon = "$basePathIcons/exercise.png";
+String kAddFriendIcon = "$basePathIcons/add_friend.png";
+String kArrowIcon = "$basePathIcons/arrow.png";
 String kHomeIcon = "$basePathIcons/home.png";
 String kHomeFilledIcon = "$basePathIcons/home_filled.png";
 String kFlaskIcon = "$basePathIcons/flask.png";
@@ -110,6 +119,38 @@ String kSleep2 = "$basePath/sleep2.png";
 String kSleep3 = "$basePath/sleep3.png";
 String kSleep4 = "$basePath/sleep4.png";
 String kSleep5 = "$basePath/sleep5.png";
+String kHealthImage = "$basePath/health.png";
+String kHealthBanner = "$basePath/health_banner.png";
+String kFriendsImage = "$basePath/friends.png";
+String kSleep1Image = "$basePath/sleep1.png";
+String kFlash1Image = "$basePath/flash1.png";
+String kLeave1Image = "$basePath/leave1.png";
+String kShield1Image = "$basePath/shield2.png";
+String kExercise1Image = "$basePath/exercise1.png";
+String kPowerImage = "$basePath/power.png";
+String kMindImage = "$basePath/mind.png";
+String kSuitPersonImage = "$basePath/suitPerson.png";
+String kSuccessPersonImage = "$basePath/successPerson.png";
+String kTraderPersonImage = "$basePath/trader.png";
+String kJwellerPersonImage = "$basePath/jweler.png";
+String kOfficeBossImage = "$basePath/officeBoss.png";
+String kOfficeMateImage = "$basePath/officeMate.png";
+String kOfficeMate1Image = "$basePath/officeMate1.png";
+String kDevelImage = "$basePath/devel.png";
+String kGokuImage = "$basePath/goku.png";
+String kMagicianImage = "$basePath/magician.png";
+String kCheersImage = "$basePath/cheers.png";
+String kAchieveImage = "$basePath/achieve.png";
+String kSleepImage1 = "$basePath/sleepImage1.png";
+String kSleepImage2 = "$basePath/sleepImage2.png";
+String kSleepImage3 = "$basePath/sleepImage3.png";
+String kSleepImage4 = "$basePath/sleepImage4.png";
+String kSleepImage5 = "$basePath/sleepImage5.png";
+String kSleepImage6 = "$basePath/sleepImage6.png";
+String kSleepImage7 = "$basePath/sleepImage7.png";
+
+
+
 
 ///Gifs
 String kAppLoading = "$basePathGif/app_loading.gif";

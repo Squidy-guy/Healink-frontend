@@ -21,6 +21,9 @@ import 'package:healink_app/screens/starting_screens/welcome_screen.dart';
 import 'package:healink_app/utils/app_strings.dart';
 import 'package:healink_app/utils/screen_bindings.dart';
 
+import '../screens/insights_screen/activity_detail.dart';
+import '../screens/insights_screen/insights_screen.dart';
+
 class RouteGenerator {
   static List<GetPage> getPages() {
     return [
@@ -63,6 +66,14 @@ class RouteGenerator {
       GetPage(
           name: kHabitSelectionScreenRoute,
           page: () => HabitSelectionScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kInsightScreenRoute,
+          page: () => InsightsScreen(),
+          binding: ScreenBindings()),
+      GetPage(
+          name: kActivityDetailScreenRoute,
+          page: () => ActivityDetailScreen(),
           binding: ScreenBindings()),
       GetPage(
           name: kBottomBarScreenRoute,

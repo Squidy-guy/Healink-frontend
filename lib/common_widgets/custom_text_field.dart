@@ -67,9 +67,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
   void initState() {
     super.initState();
     widget.focusNode?.addListener(() {
-      setState(() {
+      if(mounted) {
+        setState(() {
         isFocused = widget.focusNode!.hasFocus;
       });
+      }
     });
   }
 
