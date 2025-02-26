@@ -135,16 +135,44 @@ class RegisterScreen extends StatelessWidget {
                           .copyWith(color: kGreyShade2Color),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(kTermsConditionsScreenRoute);
+                      },
                       child: Text(
-                        'Terms, Policy and Disclaimer',
+                        'Terms,',
                         style: AppStyles.darkGreyTextStyle().copyWith(
                             color: kGreyShade2Color,
                             fontWeight: FontWeight.w700,
                             decoration: TextDecoration.underline,
                             decorationColor: kGreyShade2Color),
                       ),
-                    )
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(kPrivacyPolicyScreenRoute);
+                      },
+                      child: Text(
+                        ' Policy and ',
+                        style: AppStyles.darkGreyTextStyle().copyWith(
+                            color: kGreyShade2Color,
+                            fontWeight: FontWeight.w700,
+                            decoration: TextDecoration.underline,
+                            decorationColor: kGreyShade2Color),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(kDisclaimerScreenRoute);
+                      },
+                      child: Text(
+                        'Disclaimer',
+                        style: AppStyles.darkGreyTextStyle().copyWith(
+                            color: kGreyShade2Color,
+                            fontWeight: FontWeight.w700,
+                            decoration: TextDecoration.underline,
+                            decorationColor: kGreyShade2Color),
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(height: getHeight(8)),

@@ -207,18 +207,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: controller.habits.length,
                 itemBuilder: (context, index) {
                   var habit = controller.habits[index];
-                  return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: getWidth(24)),
-                    child: HabitCard(
-                      icon: habit["icon"],
-                      name: habit["name"],
-                      time: habit["time"],
-                      streak: habit["streak"],
-                      checked: habit["checked"],
-                      color: habit["color"],
-                      progress: 0.2,
-                      img: habit["icon2"],
-                      onTap: () => controller.toggleHabit(index),
+                  return GestureDetector(
+                    onTap: (){
+                      if(index == 0){
+                        Get.toNamed(kFourthNutHabitDetailRoute);
+                      } else {
+                        Get.toNamed(kFirstResHabitDetailRoute);
+
+                      }
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: getWidth(24)),
+                      child: HabitCard(
+                        icon: habit["icon"],
+                        name: habit["name"],
+                        time: habit["time"],
+                        streak: habit["streak"],
+                        checked: habit["checked"],
+                        color: habit["color"],
+                        progress: 0.2,
+                        img: habit["icon2"],
+                        onTap: () => controller.toggleHabit(index),
+                      ),
                     ),
                   );
                 },

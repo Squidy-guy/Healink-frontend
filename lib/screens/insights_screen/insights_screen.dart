@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:healink_app/common_widgets/Insight_dialog.dart';
 import 'package:healink_app/common_widgets/custom_button.dart';
+import 'package:healink_app/screens/insights_screen/resi_activity_detail.dart';
+import 'package:healink_app/screens/insights_screen/simulation_activity_detail.dart';
 import 'package:healink_app/utils/app_colors.dart';
 import 'package:healink_app/utils/app_images.dart';
 import 'package:healink_app/utils/app_strings.dart';
@@ -10,13 +12,14 @@ import 'package:healink_app/utils/app_styles.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'activity_detail.dart';
+import 'exercise_activity_detail.dart';
+import 'nutrition_activity_detail.dart';
+import 'sleep_activity_detail.dart';
 import 'controller/insight_controller.dart';
 
-class InsightsScreen extends StatelessWidget {
-  final InsightController controller = Get.find();
+class InsightsScreen extends GetView<InsightController> {
 
-  InsightsScreen({super.key});
+  const InsightsScreen({super.key});
 
   void insightDialog(){
     Get.dialog(
@@ -26,6 +29,126 @@ class InsightsScreen extends StatelessWidget {
       barrierDismissible: false,
     );
   }
+
+  void achievementDialog(var data){
+    Get.dialog(
+      Dialog(
+        backgroundColor: kBgColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
+        child: Padding(
+          padding: AppStyles().paddingAll24,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(data['title'],style: AppStyles.blackTextStyle().copyWith(fontSize: 16,fontWeight: FontWeight.w700),),
+              SizedBox(height: getHeight(12),),
+              Text(data['detail'],style: AppStyles.blackTextStyle().copyWith(fontSize: 16,fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
+              SizedBox(height: getHeight(29),),
+              SizedBox(
+                height: getHeight(139),
+                width: getWidth(121),
+                child: Image.asset(data["image"],fit: BoxFit.contain,),
+              ),
+              SizedBox(height: getHeight(29),),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                      onTap: (){
+
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Icon(Icons.arrow_back_ios,size: 20,color: kBlackTextColor,),
+                      )),
+                  LinearPercentIndicator(
+                    padding: EdgeInsets.only(left: 0),
+                    width: getWidth(121),
+                    lineHeight: 6,
+                    percent: data['progress'],
+                    backgroundColor: kBlackTextColor.withOpacity(0.1),
+                    progressColor: kBlackTextColor,
+                    barRadius: Radius.circular(10),
+                  ),
+                  InkWell(
+                      onTap: (){
+
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Icon(Icons.arrow_forward_ios_sharp,size: 20,color: kBlackTextColor,),
+                      )),
+                ],
+              ),
+              SizedBox(height: getHeight(10),),
+              Text("${data['achieved']} / ${data['totalAward']}",style: AppStyles.blackTextStyle().copyWith(fontSize: 20,fontWeight: FontWeight.w700),),
+              SizedBox(height: getHeight(34),),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage(kBronzeImage),
+                      ),
+                      SizedBox(height: getHeight(14),),
+                      Text(data['totalBronze'].toString(),style: AppStyles.blackTextStyle().copyWith(fontSize: 12,fontWeight: FontWeight.w700),),
+                      SizedBox(height: getHeight(14),),
+                      data['isBronze'] == true? Image.asset(kTrueIcon,height: 14,width: 14,) : SizedBox()
+                    ],
+                  ),
+                  SizedBox(width: getWidth(28),),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage(kSilverImage),
+                      ),
+                      SizedBox(height: getHeight(14),),
+                      Text(data['totalSilver'],style: AppStyles.blackTextStyle().copyWith(fontSize: 12,fontWeight: FontWeight.w700),),
+                      SizedBox(height: getHeight( 14 ),),
+                      data['totalSilver'] == true ? Image.asset(kTrueIcon,height: 14,width: 14,) : SizedBox()
+
+                    ],
+                  ),
+                  SizedBox(width: getWidth(28),),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage(kGoldImage),
+                      ),
+                      SizedBox(height: getHeight(14),),
+                      Text(data['totalGold'],style: AppStyles.blackTextStyle().copyWith(fontSize: 12,fontWeight: FontWeight.w700),),
+                      SizedBox(height: getHeight(14),),
+                      data['totalGold'] == true? Image.asset(kTrueIcon,height: 14,width: 14,) : SizedBox()
+
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: getHeight(29),),
+              GestureDetector(
+                onTap: (){
+                  Get.back();
+                },
+                child: CircleAvatar(
+                  radius: 18,
+                  backgroundColor: kGreyShade5Color,
+                  child: Center(child: Icon(Icons.close,size: 16,color: kWhiteColor,)),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      barrierDismissible: false,
+    );
+
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -76,12 +199,22 @@ class InsightsScreen extends StatelessWidget {
                           children: [
                             _buildSmallIndicator(0.75, kPrimaryColor, kSleepIcon,(){
                               // Get.toNamed(kActivityDetailScreenRoute);
-                              Get.to(ActivityDetailScreen());
+                              Get.to(SleepActivityDetailScreen());
                             }),
-                            _buildSmallIndicator(0.50, kShadow2DarkColor, kFlashIcon,(){}),
-                            _buildSmallIndicator(0.60, kGreenColor, kLeaveIcon,(){}),
-                            _buildSmallIndicator(0.40, kYellowColor, kShieldIcon,(){}),
-                            _buildSmallIndicator(0.30, kLightRedColor, kExerciseIcon,(){}),
+                            _buildSmallIndicator(0.50, kShadow2DarkColor, kFlashIcon,(){
+                              Get.to(SimulationActivityDetailScreen());
+
+                            }),
+                            _buildSmallIndicator(0.60, kGreenColor, kLeaveIcon,(){
+                              Get.to(NutritionActivityDetailScreen());
+                            }),
+                            _buildSmallIndicator(0.40, kYellowColor, kShieldIcon,(){
+                              Get.to(ResilienceActivityDetailScreen());
+
+                            }),
+                            _buildSmallIndicator(0.30, kLightRedColor, kExerciseIcon,(){
+                              Get.to(ExerciseActivityDetailScreen());
+                            }),
                           ],
                         ),
                         SizedBox(height: getHeight(17),),
@@ -145,31 +278,36 @@ class InsightsScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: getHeight(18),),
-                Container(
-                  height: getHeight(110),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
-                      color: kWhiteColor
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(14),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Risk Report",style: AppStyles.blackTextStyle().copyWith(fontSize: 18,fontWeight: FontWeight.w700),),
-                            SizedBox(height: getHeight(7),),
-                            Text("Disease risk based on your\nbehavior.",style: AppStyles.blackTextStyle().copyWith(fontSize: 15,fontWeight: FontWeight.w500),),
-                          ],
-                        ),
-                        SizedBox(
-                          height: getHeight(84),
-                          width: getWidth(84),
-                          child: Image.asset(kHealthImage,fit: BoxFit.contain,),
-                        )
-                      ],
+                GestureDetector(
+                  onTap: (){
+                    Get.toNamed(kRiskReportScreenRoute);
+                  },
+                  child: Container(
+                    height: getHeight(110),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(18),
+                        color: kWhiteColor
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(14),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Risk Report",style: AppStyles.blackTextStyle().copyWith(fontSize: 18,fontWeight: FontWeight.w700),),
+                              SizedBox(height: getHeight(7),),
+                              Text("Disease risk based on your\nbehavior.",style: AppStyles.blackTextStyle().copyWith(fontSize: 15,fontWeight: FontWeight.w500),),
+                            ],
+                          ),
+                          SizedBox(
+                            height: getHeight(84),
+                            width: getWidth(84),
+                            child: Image.asset(kHealthImage,fit: BoxFit.contain,),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -313,29 +451,34 @@ class InsightsScreen extends StatelessWidget {
                       spacing: 16,
                       runSpacing: 16,
                       children: controller.badges.map((badge) {
-                        return SizedBox(
-                          width: 61,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                badge["image"],
-                                height: 70,
-                                width: 61,
-                              ),
-                              SizedBox(height: 8),
-                              LinearPercentIndicator(
-                                padding: EdgeInsets.only(left: 0),
-                                width: getWidth(61),
-                                lineHeight: 6,
-                                percent: badge["progress"],
-                                backgroundColor: kBlackTextColor.withOpacity(0.1),
-                                progressColor: kBlackTextColor,
-                                barRadius: Radius.circular(10),
-                              ),
-                            ],
+                        return InkWell(
+                          onTap: (){
+                            achievementDialog(badge);
+                          },
+                          child: SizedBox(
+                            width: 61,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  badge["image"],
+                                  height: 70,
+                                  width: 61,
+                                ),
+                                SizedBox(height: 8),
+                                LinearPercentIndicator(
+                                  padding: EdgeInsets.only(left: 0),
+                                  width: getWidth(61),
+                                  lineHeight: 6,
+                                  percent: badge["progress"],
+                                  backgroundColor: kBlackTextColor.withOpacity(0.1),
+                                  progressColor: kBlackTextColor,
+                                  barRadius: Radius.circular(10),
+                                ),
+                              ],
+                            ),
                           ),
                         );
                       }).toList(),
@@ -435,7 +578,9 @@ class InsightsScreen extends StatelessWidget {
                           isImage: true,
                           image: kAddFriendIcon,
                           title: "Add Friends",
-                          onTap: (){},
+                          onTap: (){
+                            Get.toNamed(kFriendsScreenRoute);
+                          },
                         )
                       ],
                     ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:healink_app/common_widgets/custom_appBar.dart';
 import 'package:healink_app/common_widgets/profile_menu_item.dart';
 import 'package:healink_app/utils/app_images.dart';
+import 'package:healink_app/utils/app_strings.dart';
 import 'package:healink_app/utils/app_styles.dart';
 
 class AboutAppScreen extends StatelessWidget {
@@ -20,17 +22,23 @@ class AboutAppScreen extends StatelessWidget {
             ProfileMenuItem(
               iconPath: kNoteIcon,
               title: "Terms and Conditions",
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(kTermsConditionsScreenRoute);
+              },
             ),
             ProfileMenuItem(
               iconPath: kPrivacyIcon,
               title: "Privacy Policy",
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(kPrivacyPolicyScreenRoute);
+              },
             ),
             ProfileMenuItem(
               iconPath: kDisclaimerIcon,
               title: "Disclaimer",
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(kDisclaimerScreenRoute);
+              },
             ),
             Image.asset(
               kDisclaimer,

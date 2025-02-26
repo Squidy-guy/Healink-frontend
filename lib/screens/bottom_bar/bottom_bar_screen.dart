@@ -10,6 +10,8 @@ import 'package:healink_app/utils/app_colors.dart';
 import 'package:healink_app/utils/app_images.dart';
 import 'package:healink_app/utils/app_styles.dart';
 
+import '../insights_screen/insights_screen.dart';
+
 class BottomBarScreen extends StatelessWidget {
   final BottomNavController controller = Get.find();
 
