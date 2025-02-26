@@ -14,6 +14,7 @@ class CustomTextField extends StatefulWidget {
   final Color borderColor;
   final Color fillColor;
   final Color hintColor;
+  final Color textColor;
   final bool isStyle;
   final TextInputType textInputType;
   final Widget Function(bool isFocused)? suffixBuilder;
@@ -54,6 +55,7 @@ class CustomTextField extends StatefulWidget {
     this.borderRadius = 24,
     this.topPadding = 0,
     this.showShadow = true,
+    this.textColor = kGreyShadeColor,
   });
 
   @override
@@ -67,10 +69,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
   void initState() {
     super.initState();
     widget.focusNode?.addListener(() {
-      if(mounted) {
+      if (mounted) {
         setState(() {
-        isFocused = widget.focusNode!.hasFocus;
-      });
+          isFocused = widget.focusNode!.hasFocus;
+        });
       }
     });
   }
@@ -148,8 +150,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
           ),
         ),
-        style: AppStyles.darkGreyTextStyle()
-            .copyWith(fontSize: 16.sp, fontWeight: FontWeight.w600),
+        style: AppStyles.darkGreyTextStyle().copyWith(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w600,
+            color: widget.textColor),
       ),
     );
   }

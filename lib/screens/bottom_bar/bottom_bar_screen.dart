@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:healink_app/screens/biomarkers/biomarker_screen.dart';
 import 'package:healink_app/screens/bottom_bar/controller/bottom_bar_controller.dart';
 import 'package:healink_app/screens/home/home_screen.dart';
+import 'package:healink_app/screens/insights_screen/insights_screen.dart';
 import 'package:healink_app/screens/knowledge/knowledge_screen.dart';
 import 'package:healink_app/screens/profile/profile_screen.dart';
 import 'package:healink_app/utils/app_colors.dart';
@@ -13,8 +15,8 @@ class BottomBarScreen extends StatelessWidget {
 
   final List<Widget> screens = [
     HomeScreen(),
-    Container(),
-    Container(),
+    InsightsScreen(),
+    BiomarkerScreen(),
     KnowledgeScreen(),
     ProfileScreen(),
   ];

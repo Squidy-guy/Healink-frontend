@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               initialBinding: ScreenBindings(),
               getPages: RouteGenerator.getPages(),
-              initialRoute: kInsightScreenRoute,
+              initialRoute: kSplashScreenRoute,
               builder: (context, child) {
                 return MediaQuery(
                   data: MediaQuery.of(context).copyWith(

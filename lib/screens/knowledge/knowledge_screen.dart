@@ -173,12 +173,24 @@ class KnowledgeScreen extends StatelessWidget {
   Widget _buildCategoriesSection() {
     return Obx(() {
       return Column(
-        children: controller.categories.map((category) {
+        children: controller.categories.asMap().entries.map((entry) {
+          int index = entry.key;
+          var category = entry.value;
           return Padding(
             padding: EdgeInsets.only(bottom: getHeight(20)),
             child: InkWell(
               onTap: () {
-                Get.toNamed(kSleepGuideScreenRoute);
+                List<String> categoryRoutes = [
+                  kSleepGuideScreenRoute,
+                  kStimulationGuideScreenRoute,
+                  kNutritionGuideScreenRoute,
+                  kResilienceGuideScreenRoute,
+                  kExerciseGuideScreenRoute
+                ];
+
+                if (index < categoryRoutes.length) {
+                  Get.toNamed(categoryRoutes[index]);
+                }
               },
               child: Container(
                 decoration: BoxDecoration(

@@ -35,12 +35,17 @@ class HabitCard extends StatelessWidget {
         children: [
           InkWell(
             onTap: onTap,
-            child: Image.asset(
-              checked ? kCheckboxFilledIcon : kCheckboxIcon,
-              height: getHeight(28),
-              width: getWidth(28),
-              fit: BoxFit.cover,
-            ),
+            child: !checked
+                ? Image.asset(
+                    kCheckboxIcon,
+                    height: getHeight(28),
+                    width: getWidth(28),
+                  )
+                : Image.asset(
+                    kCircle,
+                    height: getHeight(28),
+                    width: getWidth(28),
+                  ),
           ),
           SizedBox(width: getWidth(24)),
           Expanded(
