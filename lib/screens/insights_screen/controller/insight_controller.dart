@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:healink_app/utils/app_images.dart';
-import '../../../common_widgets/custom_button.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/app_styles.dart';
 
@@ -23,7 +22,7 @@ class InsightController extends GetxController {
     {"image": kMagicianImage, "progress": 0.35,"title": "Warrior of the Mind" , "detail" : "Complete Resilience habits 50 times","totalAward" : "150", "achieved" : "101" ,"isBronze" : true, "isSilver" : false, "isGold" : false,"totalBronze" : "50","totalSilver" : "250" , "totalGold" : "500"},
   ].obs;
 
-  RxList<int> healthData = [2, 2, 2, 2, 4, 100, 3].obs;
+  RxList<int> healthData = [20, 20, 20, 20, 40, 100, 30].obs;
   RxList<String> days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"].obs;
   RxList<String> dates = ["24", "25", "26", "27", "28", "29", "30"].obs;
   var sleepTips = <Map<String, dynamic>>[
@@ -37,9 +36,9 @@ class InsightController extends GetxController {
   ].obs;
   var simulationTips = <Map<String, dynamic>>[
     {"tip": "Social interaction", "image": kSimulationImage1, "isAdded": false},
-    {"tip": "Motor skill training", "image": kSimulationImage2, "isAdded": false},
-    {"tip": "Analyze and learn", "image": kSimulationImage3, "isAdded": false},
-    {"tip": "Creative synthesis", "image": kSimulationImage4, "isAdded": false},
+    {"tip": "Motor skill training", "image": kSimulationImage3, "isAdded": false},
+    {"tip": "Analyze and learn", "image": kSimulationImage4, "isAdded": false},
+    {"tip": "Creative synthesis", "image": kSimulationImage2, "isAdded": false},
     {"tip": "Explore in nature", "image": kSimulationImage5, "isAdded": true},
   ].obs;
   var nutritionTips = <Map<String, dynamic>>[
@@ -62,8 +61,8 @@ class InsightController extends GetxController {
   var exerciseTips = <Map<String, dynamic>>[
     {"tip": "Aerobic exercise - moderate intensity", "image": kExerciseImage1, "isAdded": false},
     {"tip": "Aerobic exercise - vigorous intensity", "image": kExerciseImage2, "isAdded": false},
-    {"tip": "Strength training", "image": kExerciseImage3, "isAdded": false},
-    {"tip": "Move often", "image": kExerciseImage4, "isAdded": false},
+    {"tip": "Strength training", "image": kExerciseImage4, "isAdded": false},
+    {"tip": "Move often", "image": kExerciseImage3, "isAdded": false},
     {"tip": "Stretching & posture", "image": kExerciseImage5, "isAdded": true},
   ].obs;
 

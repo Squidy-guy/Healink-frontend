@@ -45,7 +45,7 @@ class Plasma extends StatelessWidget {
             buildHabits(
                 title: "Habits to help this biomarker",
                 textColor: kPrimaryColor,
-                list: controller.bloodGlucoseHabits),
+                list: controller.plasmaHabits),
             SizedBox(height: getHeight(26)),
           ],
         ),

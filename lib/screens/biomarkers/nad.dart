@@ -45,7 +45,7 @@ class Nad extends StatelessWidget {
             buildHabits(
                 title: "Habits to help this biomarker",
                 textColor: kPrimaryColor,
-                list: controller.bloodGlucoseHabits),
+                list: controller.nadHabits),
             SizedBox(height: getHeight(26)),
           ],
         ),

@@ -43,77 +43,93 @@ class HabitCard extends StatelessWidget {
                   )
                 : Image.asset(
                     kCircle,
-                    height: getHeight(28),
-                    width: getWidth(28),
+                    height: getHeight(35),
+                    width: getWidth(35),
                   ),
           ),
           SizedBox(width: getWidth(24)),
           Expanded(
-            child: Container(
-              padding: EdgeInsets.only(
-                  bottom: getHeight(7), top: getHeight(14), left: getWidth(11)),
-              decoration: BoxDecoration(
-                color: kWhiteColor,
-                borderRadius: BorderRadius.circular(24),
-                border:
-                    Border.all(color: checked ? color : kWhiteColor, width: 2),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(icon, width: getWidth(61)),
-                  SizedBox(width: getWidth(11)),
-                  Column(
+            child: Stack(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(
+                      bottom: getHeight(7),
+                      top: getHeight(14),
+                      left: getWidth(11)),
+                  decoration: BoxDecoration(
+                    color: kWhiteColor,
+                    borderRadius: BorderRadius.circular(24),
+                    border: Border.all(
+                        color: checked ? color : kWhiteColor, width: 2),
+                  ),
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
+                      Image.asset(icon, width: getWidth(61)),
+                      SizedBox(width: getWidth(11)),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          Row(
                             children: [
-                              SizedBox(
-                                width: getWidth(160),
-                                child: Text(name,
-                                    style: AppStyles.blackTextStyle()
-                                        .copyWith(fontWeight: FontWeight.w700)),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: getWidth(160),
+                                    child: Text(name,
+                                        style: AppStyles.blackTextStyle()
+                                            .copyWith(
+                                                fontWeight: FontWeight.w700)),
+                                  ),
+                                  SizedBox(height: getHeight(8)),
+                                  Text(time,
+                                      style: TextStyle(
+                                          color: kGreyShade8Color,
+                                          fontSize: 13.sp)),
+                                  SizedBox(height: getHeight(8)),
+                                  Text("$streak day streak",
+                                      style: TextStyle(
+                                          color: color, fontSize: 13.sp)),
+                                ],
                               ),
-                              SizedBox(height: getHeight(8)),
-                              Text(time,
-                                  style: TextStyle(
-                                      color: kGreyShade8Color,
-                                      fontSize: 13.sp)),
-                              SizedBox(height: getHeight(8)),
-                              Text("$streak day streak",
-                                  style:
-                                      TextStyle(color: color, fontSize: 13.sp)),
+                              SizedBox(
+                                width: getWidth(10),
+                              ),
+                              Image.asset(
+                                img,
+                                height: getHeight(15.5),
+                                width: getWidth(15.5),
+                                color: color,
+                              ),
                             ],
                           ),
-                          SizedBox(
-                            width: getWidth(10),
-                          ),
-                          Image.asset(
-                            img,
-                            height: getHeight(15.5),
-                            width: getWidth(15.5),
-                            color: color,
+                          SizedBox(height: getHeight(8)),
+                          LinearPercentIndicator(
+                            width: getWidth(182),
+                            lineHeight: getHeight(8),
+                            percent: progress.clamp(0.0, 1.0),
+                            backgroundColor: kGreyShade10Color,
+                            progressColor: color,
+                            barRadius: Radius.circular(15),
+                            animation: true,
+                            animationDuration: 800,
                           ),
                         ],
                       ),
-                      SizedBox(height: getHeight(8)),
-                      LinearPercentIndicator(
-                        width: getWidth(182),
-                        lineHeight: getHeight(8),
-                        percent: progress.clamp(0.0, 1.0),
-                        backgroundColor: kGreyShade10Color,
-                        progressColor: color,
-                        barRadius: Radius.circular(15),
-                        animation: true,
-                        animationDuration: 800,
-                      ),
                     ],
                   ),
-                ],
-              ),
+                ),
+                if (name == "Mindfulness")
+                  Positioned(
+                    right: getWidth(25),
+                    child: Image.asset(
+                      kBookmarkIcon,
+                      height: getHeight(19),
+                      width: getWidth(16),
+                    ),
+                  ),
+              ],
             ),
           ),
         ],

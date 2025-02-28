@@ -45,7 +45,7 @@ class Dunedin extends StatelessWidget {
             buildHabits(
                 title: "Habits to help this biomarker",
                 textColor: kPrimaryColor,
-                list: controller.bloodGlucoseHabits),
+                list: controller.dunedinHabits),
             SizedBox(height: getHeight(26)),
           ],
         ),

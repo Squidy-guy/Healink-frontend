@@ -41,7 +41,7 @@ class WaitToHipRatio extends StatelessWidget {
             buildHabits(
                 title: "Habits to help this biomarker",
                 textColor: kPrimaryColor,
-                list: controller.bloodGlucoseHabits),
+                list: controller.waistToHipRatioHabits),
             SizedBox(height: getHeight(26)),
           ],
         ),

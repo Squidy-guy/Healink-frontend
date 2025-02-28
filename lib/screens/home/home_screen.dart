@@ -178,10 +178,23 @@ class _HomeScreenState extends State<HomeScreen> {
                           SizedBox(height: getHeight(10)),
                           Row(
                             children: controller.completedHabits.map((habit) {
-                              return Padding(
-                                padding: EdgeInsets.only(right: getWidth(12)),
-                                child: Image.asset(habit,
-                                    width: getWidth(58), height: getHeight(58)),
+                              return Stack(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(right: getWidth(12)),
+                                    child: Image.asset(habit,
+                                        width: getWidth(58),
+                                        height: getHeight(58)),
+                                  ),
+                                  Positioned(
+                                    right: getWidth(2),
+                                    top: getHeight(-4.5),
+                                    child: Image.asset(kCircle,
+                                        width: getWidth(30),
+                                        height: getHeight(30)),
+                                  ),
+                                ],
                               );
                             }).toList(),
                           ),
@@ -208,12 +221,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                   var habit = controller.habits[index];
                   return GestureDetector(
-                    onTap: (){
-                      if(index == 0){
+                    onTap: () {
+                      if (index == 0) {
                         Get.toNamed(kFourthNutHabitDetailRoute);
                       } else {
                         Get.toNamed(kFirstResHabitDetailRoute);
-
                       }
                     },
                     child: Padding(

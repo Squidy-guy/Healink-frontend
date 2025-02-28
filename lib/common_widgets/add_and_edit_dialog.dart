@@ -45,8 +45,13 @@ class _EditDataDialogState extends State<EditDataDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+
               Text(
-                "Edit data for Cholesterol ratio (total/HDL)",
+                "Edit data for ",
+                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700),
+              ),
+              Text(
+                "Cholesterol ratio (total/HDL)",
                 style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700),
               ),
               SizedBox(height: getHeight(48)),
@@ -56,6 +61,7 @@ class _EditDataDialogState extends State<EditDataDialog> {
                   DataField(
                       width: getWidth(60),
                       title: "Value",
+                      leftPadding: 10,
                       controller: TextEditingController(text: "22.0")),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,6 +89,7 @@ class _EditDataDialogState extends State<EditDataDialog> {
                   DataField(
                     width: getWidth(110),
                     title: "Test date",
+                     leftPadding: 4,
                     controller: TextEditingController(
                         text: DateFormat('MM/dd/yyyy').format(selectedDate)),
                     readOnly: true,
@@ -101,14 +108,11 @@ class _EditDataDialogState extends State<EditDataDialog> {
                         height: getHeight(40),
                         width: getWidth(55),
                         decoration: BoxDecoration(
+                          color: kBlueShade8Color,
                             border: Border.all(color: kPrimaryColor),
                             borderRadius: BorderRadius.circular(5)),
                         child: Center(
-                          child: Icon(
-                            Icons.delete,
-                            color: kPrimaryColor,
-                            size: 18.sp,
-                          ),
+                          child: Image.asset(kBin1Icon,height: getHeight(20),width: getWidth(20),)
                         ),
                       ),
                     ],
@@ -260,12 +264,14 @@ class DataField extends StatelessWidget {
   final TextEditingController controller;
   final bool readOnly;
   final double width;
+   final double leftPadding;
   final Function()? onTap;
   const DataField(
       {required this.title,
       required this.controller,
       this.readOnly = false,
       this.width = double.infinity,
+      this.leftPadding = 18,
       this.onTap,
       super.key});
 
@@ -288,6 +294,7 @@ class DataField extends StatelessWidget {
           showShadow: false,
           hintColor: kPrimaryColor,
           fillColor: kBlueShade8Color,
+          leftPadding: leftPadding,
           controller: controller,
           readOnly: readOnly,
           hintText: "",

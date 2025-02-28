@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:healink_app/utils/app_colors.dart';
 import '../utils/app_styles.dart';
 import 'custom_button.dart';
 
@@ -44,7 +45,7 @@ class InfoDialog extends StatelessWidget {
                 "\n\nHealink contains 30 health habits across 5 areas that are known to significantly influence health and wellbeing."
                 "\n\nThe more of these habits you complete, and the more consistently you complete them, the higher your score will be."
                 "\n\nYour approximated health risk rating (e.g. Low risk) is based on your Lifestyle Score.",
-                style: AppStyles.blackTextStyle().copyWith(fontSize: 16.sp),
+                style: AppStyles.blackTextStyle().copyWith(fontSize: 16.sp,fontWeight: FontWeight.w500,color: kBlackTextColor.withOpacity(0.7)),
               ),
               SizedBox(height: getHeight(22)),
               Row(

@@ -29,6 +29,7 @@ class CustomTextField extends StatefulWidget {
   final double borderRadius;
   final double topPadding;
   final bool showShadow;
+  final double leftPadding;
 
   const CustomTextField({
     super.key,
@@ -56,6 +57,7 @@ class CustomTextField extends StatefulWidget {
     this.topPadding = 0,
     this.showShadow = true,
     this.textColor = kGreyShadeColor,
+    this.leftPadding = 18
   });
 
   @override
@@ -121,7 +123,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 )
               : null,
           contentPadding:
-              EdgeInsets.only(left: getWidth(18), top: widget.topPadding),
+              EdgeInsets.only(left: getWidth(widget.leftPadding), top: widget.topPadding),
           prefixIcon: widget.prefix,
           suffix: widget.suffixText,
           border: OutlineInputBorder(

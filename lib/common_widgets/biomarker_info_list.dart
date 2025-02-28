@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:healink_app/common_widgets/custom_button.dart';
+import 'package:healink_app/common_widgets/report_dialog.dart';
 import 'package:healink_app/screens/biomarkers/controller/biomarker_controller.dart';
 import 'package:healink_app/utils/app_colors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -37,19 +38,24 @@ class ExpandableInfoSection extends StatelessWidget {
                 ),
                 if (expand.value) ...[
                   SizedBox(height: getHeight(16)),
-                  Row(
-                    children: [
-                      Text(
-                        "Source info",
-                        style: AppStyles.blackTextStyle().copyWith(
-                            fontSize: 16.sp,
-                            overflow: TextOverflow.ellipsis,
-                            decoration: TextDecoration.underline,
-                            decorationColor: kBlackTextColor),
-                      ),
-                      Icon(Icons.arrow_forward,
-                          color: kBlackTextColor, size: 18.sp)
-                    ],
+                  InkWell(
+                    onTap: () {
+                      reportDialog(context);
+                    },
+                    child: Row(
+                      children: [
+                        Text(
+                          "Source info",
+                          style: AppStyles.blackTextStyle().copyWith(
+                              fontSize: 16.sp,
+                              overflow: TextOverflow.ellipsis,
+                              decoration: TextDecoration.underline,
+                              decorationColor: kBlackTextColor),
+                        ),
+                        Icon(Icons.arrow_forward,
+                            color: kBlackTextColor, size: 18.sp)
+                      ],
+                    ),
                   ),
                 ],
                 SizedBox(height: getHeight(16)),

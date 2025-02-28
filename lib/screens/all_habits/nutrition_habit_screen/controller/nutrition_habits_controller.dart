@@ -3,100 +3,97 @@ import 'package:get/get.dart';
 
 class NutritionHabitController extends GetxController {
   var firstHabitUpsDowns = <Map<String, dynamic>>[
-    {"issue" : "NAD+","type" : "healthy"},
-    {"issue" : "Life expectancy","type" : "healthy"},
-    {"issue" : "Inflammation","type" : "unhealthy"},
-    {"issue" : "Heart disease risk","type" : "unhealthy"},
-    {"issue" : "Metabolic syndrome risk","type" : "unhealthy"},
-    {"issue" : "Dementia risk","type" : "unhealthy"},
-    {"issue" : "Cancer risk","type" : "unhealthy"},
-    {"issue" : "Telomere shortening","type" : "unhealthy"},
-    {"issue" : "Antioxidant activity","type" : "healthy"},
-    {"issue" : "Telomere length","type" : "healthy"},
-    {"issue" : "Fatigue","type" : "unhealthy"},
-    {"issue" : "Oxidative damage","type" : "unhealthy"},
+    {"issue": "NAD+", "type": "healthy"},
+    {"issue": "Life expectancy", "type": "healthy"},
+    {"issue": "Inflammation", "type": "unhealthy"},
+    {"issue": "Heart disease risk", "type": "unhealthy"},
+    {"issue": "Metabolic syndrome risk", "type": "unhealthy"},
+    {"issue": "Dementia risk", "type": "unhealthy"},
+    {"issue": "Cancer risk", "type": "unhealthy"},
+    {"issue": "Telomere shortening", "type": "unhealthy"},
+    {"issue": "Antioxidant activity", "type": "healthy"},
+    {"issue": "Telomere length", "type": "healthy"},
+    {"issue": "Fatigue", "type": "unhealthy"},
+    {"issue": "Oxidative damage", "type": "unhealthy"},
   ].obs;
 
-
   var secondHabitUpsDowns = <Map<String, dynamic>>[
-    {"issue" : "NAD+","type" : "healthy"},
-    {"issue" : "Life expectancy","type" : "healthy"},
-    {"issue" : "Inflammation","type" : "unhealthy"},
-    {"issue" : "Heart disease risk","type" : "unhealthy"},
-    {"issue" : "Metabolic syndrome risk","type" : "unhealthy"},
-    {"issue" : "Dementia risk","type" : "unhealthy"},
-    {"issue" : "Cancer risk","type" : "unhealthy"},
-    {"issue" : "Telomere shortening","type" : "unhealthy"},
-    {"issue" : "Antioxidant activity","type" : "healthy"},
-    {"issue" : "Telomere length","type" : "healthy"},
-    {"issue" : "Fatigue","type" : "unhealthy"},
-    {"issue" : "Oxidative damage","type" : "unhealthy"},
+    {"issue": "NAD+", "type": "healthy"},
+    {"issue": "Life expectancy", "type": "healthy"},
+    {"issue": "Inflammation", "type": "unhealthy"},
+    {"issue": "Heart disease risk", "type": "unhealthy"},
+    {"issue": "Metabolic syndrome risk", "type": "unhealthy"},
+    {"issue": "Dementia risk", "type": "unhealthy"},
+    {"issue": "Cancer risk", "type": "unhealthy"},
+    {"issue": "Telomere shortening", "type": "unhealthy"},
+    {"issue": "Antioxidant activity", "type": "healthy"},
+    {"issue": "Telomere length", "type": "healthy"},
+    {"issue": "Fatigue", "type": "unhealthy"},
+    {"issue": "Oxidative damage", "type": "unhealthy"},
   ].obs;
 
   var thirdHabitUpsDowns = <Map<String, dynamic>>[
-    {"issue" : "NAD+","type" : "healthy"},
-    {"issue" : "Life expectancy","type" : "healthy"},
-    {"issue" : "Inflammation","type" : "unhealthy"},
-    {"issue" : "Heart disease risk","type" : "unhealthy"},
-    {"issue" : "Metabolic syndrome risk","type" : "unhealthy"},
-    {"issue" : "Dementia risk","type" : "unhealthy"},
-    {"issue" : "Cancer risk","type" : "unhealthy"},
-    {"issue" : "Telomere shortening","type" : "unhealthy"},
-    {"issue" : "Antioxidant activity","type" : "healthy"},
-    {"issue" : "Telomere length","type" : "healthy"},
-    {"issue" : "Fatigue","type" : "unhealthy"},
-    {"issue" : "Oxidative damage","type" : "unhealthy"},
+    {"issue": "NAD+", "type": "healthy"},
+    {"issue": "Life expectancy", "type": "healthy"},
+    {"issue": "Inflammation", "type": "unhealthy"},
+    {"issue": "Heart disease risk", "type": "unhealthy"},
+    {"issue": "Metabolic syndrome risk", "type": "unhealthy"},
+    {"issue": "Dementia risk", "type": "unhealthy"},
+    {"issue": "Cancer risk", "type": "unhealthy"},
+    {"issue": "Telomere shortening", "type": "unhealthy"},
+    {"issue": "Antioxidant activity", "type": "healthy"},
+    {"issue": "Telomere length", "type": "healthy"},
+    {"issue": "Fatigue", "type": "unhealthy"},
+    {"issue": "Oxidative damage", "type": "unhealthy"},
   ].obs;
 
   var fourthHabitUpsDowns = <Map<String, dynamic>>[
-    {"issue" : "Mood+","type" : "healthy"},
-    {"issue" : "Cognitive function","type" : "healthy"},
-    {"issue" : "Cortisol","type" : "unhealthy"},
-    {"issue" : "Heart disease risk","type" : "unhealthy"},
-    {"issue" : "Metabolic syndrome risk","type" : "unhealthy"},
-    {"issue" : "Dementia risk","type" : "unhealthy"},
-    {"issue" : "Cancer risk","type" : "unhealthy"},
-    {"issue" : "Telomere shortening","type" : "unhealthy"},
-    {"issue" : "Sleep quality","type" : "healthy"},
-    {"issue" : "Life expectancy","type" : "healthy"},
-    {"issue" : "Fatigue","type" : "unhealthy"},
-    {"issue" : "Oxidative damage","type" : "unhealthy"},  ].obs;
+    {"issue": "Mood", "type": "healthy"},
+    {"issue": "Cognitive function", "type": "healthy"},
+    {"issue": "Cortisol", "type": "unhealthy"},
+    {"issue": "Heart disease risk", "type": "unhealthy"},
+    {"issue": "Metabolic syndrome risk", "type": "unhealthy"},
+    {"issue": "Dementia risk", "type": "unhealthy"},
+    {"issue": "Cancer risk", "type": "unhealthy"},
+    {"issue": "Telomere shortening", "type": "unhealthy"},
+    {"issue": "Sleep quality", "type": "healthy"},
+    {"issue": "Life expectancy", "type": "healthy"},
+    {"issue": "Fatigue", "type": "unhealthy"},
+    {"issue": "Oxidative damage", "type": "unhealthy"},
+  ].obs;
 
   var fifthHabitUpsDowns = <Map<String, dynamic>>[
-    {"issue" : "Sleep quality","type" : "healthy"},
-    {"issue" : "Sleep onset","type" : "healthy"},
-    {"issue" : "Dementia risk","type" : "unhealthy"},
+    {"issue": "Sleep quality", "type": "healthy"},
+    {"issue": "Sleep onset", "type": "healthy"},
+    {"issue": "Dementia risk", "type": "unhealthy"},
   ].obs;
 
   var sixthHabitUpsDowns = <Map<String, dynamic>>[
-    {"issue" : "Fat utilization+","type" : "healthy"},
-    {"issue" : "Life expectancy","type" : "healthy"},
-    {"issue" : "Insulin sensitivity","type" : "healthy"},
-    {"issue" : "NAD+","type" : "healthy"},
-    {"issue" : "Dementia risk","type" : "unhealthy"},
-    {"issue" : "Blood glucose","type" : "unhealthy"},
-    {"issue" : "Heart disease risk","type" : "unhealthy"},
-    {"issue" : "Metabolic syndrome risk","type" : "unhealthy"},
-    {"issue" : "Telomere shortening","type" : "unhealthy"},
-    {"issue" : "Autophagy","type" : "healthy"},
-    {"issue" : "Glucose tolerance","type" : "healthy"},
-    {"issue" : "Insulin resistance","type" : "unhealthy"},
+    {"issue": "Fat utilization+", "type": "healthy"},
+    {"issue": "Life expectancy", "type": "healthy"},
+    {"issue": "Insulin sensitivity", "type": "healthy"},
+    {"issue": "NAD+", "type": "healthy"},
+    {"issue": "Dementia risk", "type": "unhealthy"},
+    {"issue": "Blood glucose", "type": "unhealthy"},
+    {"issue": "Heart disease risk", "type": "unhealthy"},
+    {"issue": "Metabolic syndrome risk", "type": "unhealthy"},
+    {"issue": "Telomere shortening", "type": "unhealthy"},
+    {"issue": "Autophagy", "type": "healthy"},
+    {"issue": "Glucose tolerance", "type": "healthy"},
+    {"issue": "Insulin resistance", "type": "unhealthy"},
   ].obs;
 
   var seventhHabitUpsDowns = <Map<String, dynamic>>[
-    {"issue" : "Cognitive function","type" : "healthy"},
-    {"issue" : "Digestion","type" : "healthy"},
-    {"issue" : "Homeostatic maintenance","type" : "healthy"},
-    {"issue" : "Emotional regulation","type" : "healthy"},
-    {"issue" : "Physical performance","type" : "healthy"},
-    {"issue" : "Renal function","type" : "healthy"},
-    {"issue" : "Skin hydration","type" : "healthy"},
-    {"issue" : "Gastrointestinal function","type" : "healthy"},
-    {"issue" : "Insulin resistance","type" : "unhealthy"},
-
+    {"issue": "Cognitive function", "type": "healthy"},
+    {"issue": "Digestion", "type": "healthy"},
+    {"issue": "Homeostatic maintenance", "type": "healthy"},
+    {"issue": "Emotional regulation", "type": "healthy"},
+    {"issue": "Physical performance", "type": "healthy"},
+    {"issue": "Renal function", "type": "healthy"},
+    {"issue": "Skin hydration", "type": "healthy"},
+    {"issue": "Gastrointestinal function", "type": "healthy"},
+    {"issue": "Insulin resistance", "type": "unhealthy"},
   ].obs;
-
-
 
   var scrollController = ScrollController();
 
@@ -131,5 +128,4 @@ class NutritionHabitController extends GetxController {
       currentMessageIndex.value--;
     }
   }
-
 }

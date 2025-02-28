@@ -4,6 +4,7 @@ import 'package:healink_app/common_widgets/custom_appBar.dart';
 import 'package:healink_app/screens/friends/controller/friends_controller.dart';
 import 'package:healink_app/screens/friends/friends_profile_screen.dart';
 import 'package:healink_app/utils/app_colors.dart';
+import 'package:healink_app/utils/app_images.dart';
 import 'package:healink_app/utils/app_styles.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -23,7 +24,25 @@ class FriendsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: getHeight(75)),
-            CustomAppBar(title: "Friends"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomAppBar(title: "Friends"),
+                Container(
+                  height: getHeight(25),
+                
+                width: getWidth(25),
+                decoration: BoxDecoration(
+                  color: kGreyShade18Color,
+                  shape: BoxShape.circle
+                ),
+                child: Center(
+                  child: Icon(Icons.search,color: kBlackColor,size: 17.sp,),
+                ),
+              ),
+              ],
+            ),
             SizedBox(height: getHeight(22)),
             _buildTabBar(),
             SizedBox(height: getHeight(22)),
@@ -267,7 +286,7 @@ class FriendsScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: getWidth(10)),
-                    Icon(Icons.copy, color: kBlackTextColor, size: 16),
+                   Image.asset(kCopyIcon,height: getHeight(20),width: getWidth(20),)
                   ],
                 ),
               ),

@@ -46,7 +46,7 @@ class Pbmh extends StatelessWidget {
             buildHabits(
                 title: "Habits to help this biomarker",
                 textColor: kPrimaryColor,
-                list: controller.bloodGlucoseHabits),
+                list: controller.pbmcHabits),
             SizedBox(height: getHeight(26)),
           ],
         ),

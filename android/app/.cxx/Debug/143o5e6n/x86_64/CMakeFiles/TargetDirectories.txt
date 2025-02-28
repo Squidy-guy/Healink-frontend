@@ -1,0 +1,2 @@
+/Users/farihasiddiqui/Development/projects/Healink-App/android/app/.cxx/Debug/143o5e6n/x86_64/CMakeFiles/edit_cache.dir
+/Users/farihasiddiqui/Development/projects/Healink-App/android/app/.cxx/Debug/143o5e6n/x86_64/CMakeFiles/rebuild_cache.dir

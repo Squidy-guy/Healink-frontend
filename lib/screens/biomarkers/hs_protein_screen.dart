@@ -45,7 +45,7 @@ class HsProteinScreen extends StatelessWidget {
             buildHabits(
                 title: "Habits to help this biomarker",
                 textColor: kPrimaryColor,
-                list: controller.bloodGlucoseHabits),
+                list: controller.hsProteinHabits),
             SizedBox(height: getHeight(26)),
           ],
         ),

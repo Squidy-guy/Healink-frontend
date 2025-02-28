@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:healink_app/utils/app_images.dart';
 
 class LessonDetailController extends GetxController {
   final AudioPlayer audioPlayer = AudioPlayer();
@@ -8,11 +9,46 @@ class LessonDetailController extends GetxController {
   Rx<Duration> totalDuration = Duration.zero.obs;
   final String audioUrl = 'https://samplelib.com/lib/preview/mp3/sample-6s.mp3';
 
+  var isClicked = false.obs;
+
   @override
   void onInit() {
     super.onInit();
     _initAudio();
   }
+
+  List<Map<String, dynamic>> biomarkers = [
+    {
+      "name": "Blood pressure (sys./dia.)",
+      "category": "Heart disease",
+      "image": kBiomarker4,
+      "icon": kHeartIcon,
+    },
+    {
+      "name": "Cortisol:DHEA-S ratio",
+      "category": "Stress",
+      "image": kBiomarker8,
+      "icon": kFaceIcon,
+    },
+    {
+      "name": "PBMC Telomere length (20th%)",
+      "category": "Ageing",
+      "image": kBiomarker9,
+      "icon": kAgeIcon,
+    },
+    {
+      "name": "Plasma BDNF",
+      "category": "Depression",
+      "image": kBiomarker10,
+      "icon": kFaceIcon,
+    },
+    {
+      "name": "DunedinPACE epigenetic clock",
+      "category": "Ageing",
+      "image": kBiomarker12,
+      "icon": kAgeIcon,
+    },
+  ];
 
   void _initAudio() async {
     audioPlayer.onPositionChanged.listen((Duration position) {

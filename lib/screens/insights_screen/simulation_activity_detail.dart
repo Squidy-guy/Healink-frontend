@@ -1,12 +1,10 @@
-import 'package:fl_chart/fl_chart.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:healink_app/common_widgets/custom_button.dart';
 import 'package:healink_app/utils/app_colors.dart';
 import 'package:healink_app/utils/app_images.dart';
 import 'package:healink_app/utils/app_styles.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../common_widgets/Insight_dialog.dart';
 import '../../utils/app_strings.dart';
@@ -85,7 +83,7 @@ class SimulationActivityDetailScreen extends StatelessWidget {
                         children: [
                           Icon(Icons.keyboard_arrow_up_outlined,size: 16,color: kGreenColor,),
                           Text("0 % ",style: AppStyles.blackTextStyle().copyWith(fontSize: 14.sp,color: kGreenColor),),
-                          Text("from last week",style: AppStyles.blackTextStyle().copyWith(fontSize: 14.sp),),
+                          Text("from last week",style: AppStyles.blackTextStyle().copyWith(fontSize: 14.sp,color: kBlackTextColor.withOpacity(0.6)),),
                         ],
                       ),
                       SizedBox(height: getHeight(24),),
@@ -98,8 +96,8 @@ class SimulationActivityDetailScreen extends StatelessWidget {
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Text("Highest",style: AppStyles.blackTextStyle().copyWith(fontSize: 14),),
-                                Text("3 %",style: AppStyles.blackTextStyle().copyWith(fontSize: 14,fontWeight: FontWeight.w700),),
+                                Text("Highest",style: AppStyles.blackTextStyle().copyWith(fontSize: 14,color: kBlackTextColor.withOpacity(0.6)),),
+                                Text("3 %",style: AppStyles.blackTextStyle().copyWith(fontSize: 14,fontWeight: FontWeight.w700,),),
                               ],
                             ),
                             Container(
@@ -114,7 +112,7 @@ class SimulationActivityDetailScreen extends StatelessWidget {
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Text("Avg. user",style: AppStyles.blackTextStyle().copyWith(fontSize: 14),),
+                                Text("Avg. user",style: AppStyles.blackTextStyle().copyWith(fontSize: 14,color: kBlackTextColor.withOpacity(0.6)),),
                                 Text("3 %",style: AppStyles.blackTextStyle().copyWith(fontSize: 14,fontWeight: FontWeight.w700),),
                               ],
                             ),
@@ -124,7 +122,7 @@ class SimulationActivityDetailScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: getHeight(24),),
-                  Text("Why Simulation?",style: AppStyles.primaryTextStyle().copyWith(fontSize: 20,fontWeight: FontWeight.w700,color: kShadow2DarkColor),),
+                  Text("Why Stimulation?",style: AppStyles.primaryTextStyle().copyWith(fontSize: 20,fontWeight: FontWeight.w700,color: kShadow2DarkColor),),
                   SizedBox(height: getHeight(16),),
                   Text( "The various brain functions are susceptible to deterioration by neglect. Engaging in activities that are more cognitively challenging, varied, and novel (and doing so more frequently) is associated with greater cognitive function, a reduced rate of cognitive decline, and lower risk of dementia. "
                       "\n\nEnriched creative, social, and physical activities are important for the preservation and improvement of cognitive functioning. "

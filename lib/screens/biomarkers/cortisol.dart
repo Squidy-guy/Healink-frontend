@@ -46,7 +46,7 @@ class Cortisol extends StatelessWidget {
             buildHabits(
                 title: "Habits to help this biomarker",
                 textColor: kPrimaryColor,
-                list: controller.bloodGlucoseHabits),
+                list: controller.cortisolHabits),
             SizedBox(height: getHeight(26)),
           ],
         ),

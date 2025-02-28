@@ -27,6 +27,15 @@ class ReportController extends GetxController {
     {"title": "Blood pressure", "category": "Biomarker"},
     {"title": "Waist-to-hip ratio", "category": "Biomarker"},
     {"title": "VO2 max", "category": "Biomarker"},
+     {"title": "Grip Strength", "category": "Biomarker"},
+      {"title": "Cortisol: DHEA-S ratio", "category": "Biomarker"},
+       {"title": "Plasma BDNF", "category": "Biomarker"},
+        {"title": "PBMC Telomere length (20th%)", "category": "Biomarker"},
+         {"title": "NAD+", "category": "Biomarker"},
+          {"title": "Dunedin PACE epigenetic clock", "category": "Biomarker"},
+          {"title": "ctDNA", "category": "Biomarker"},
+          {"title": "P-tau181 & GFAP", "category": "Biomarker"},
+
   ];
 
   List<Map<String, String>> get filteredArticles {

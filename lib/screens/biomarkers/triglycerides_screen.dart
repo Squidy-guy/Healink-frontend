@@ -41,7 +41,7 @@ class TriglyceridesScreen extends StatelessWidget {
             buildHabits(
                 title: "Habits to help this biomarker",
                 textColor: kPrimaryColor,
-                list: controller.bloodGlucoseHabits),
+                list: controller.triglyceridesHabits),
             SizedBox(height: getHeight(26)),
           ],
         ),

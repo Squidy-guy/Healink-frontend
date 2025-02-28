@@ -71,6 +71,10 @@ String kMuscleIcon = "$basePathIcons/muscle.png";
 String kEditIcon = "$basePathIcons/edit.png";
 String kNeedDateIcon = "$basePathIcons/need_date.png";
 String kWarningIcon = "$basePathIcons/warning.png";
+String kBookmarkIcon = "$basePathIcons/bookmark.png";
+String kCircleTickIcon = "$basePathIcons/circle_tick.png";
+String kCopyIcon = "$basePathIcons/copy.png";
+String kBin1Icon = "$basePathIcons/bin1.png";
 
 ///IMAGES
 String kLogo = "$basePath/app_logo.png";
@@ -254,9 +258,6 @@ String kAlienAvatarImage = "$basePath/alienAvatar.png";
 String kGirlAvatarImage = "$basePath/girlAvatar.png";
 String kCowAvatarImage = "$basePath/cowAvatar.png";
 String kAnimalAvatarImage = "$basePath/animalAvatar.png";
-
-
-
 
 ///Gifs
 String kAppLoading = "$basePathGif/app_loading.gif";
